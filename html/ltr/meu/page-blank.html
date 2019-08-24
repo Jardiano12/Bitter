@@ -1,0 +1,40 @@
+<html>
+<h1> Formulario Dinamico</h1>
+<head>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+                $('#mais').click(function(){
+                    var next = $('#lista tbody').children('tr').length + 1;                                                                                             
+                    $('#lista tbody').append('<tr>' +                                                                                                                   
+                        '<td class="linha-left"><input type="text" name="item' + next + '" /></td>' +                                                                   
+                        '<td class="linha-right"><input type="text" name="quantidade' + next + '"/></td>' +                                                             
+                        '</tr>');                                                                                                                                       
+                    $(':hidden').val(next);                                                                                                                             
+                    return false;                                                                                                                                       
+                });                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+        });                                                                                                                                                             
+    </script>                                                                                                                                                           
+</head>                                                                                                                                                                 
+<body>                                                                                                                                                                  
+<form method="post" action".">
+    <table id="lista">
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Quantidade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="text" name="item1" /><br /></td>
+                <td><input type="test" name="quantidade1" /><br /></td>
+            </tr>
+        </tbody>
+    </table>
+    <input type="hidden" value="1" name="quantidade_itens" />
+    <a href="#" id="enviar">Enviar lista de compras</a>
+    <a href="#" id="mais">Adicionar Item</a>
+</form>
+</body>
+</html>
